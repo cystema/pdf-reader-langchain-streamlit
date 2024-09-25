@@ -11,9 +11,9 @@ from tempfile import NamedTemporaryFile
 import base64
 from htmlTemplates import expander_css, css, bot_template, user_template
 # streamlit deploy sqlit fix
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Process Input PDF
 def process_file(doc):
