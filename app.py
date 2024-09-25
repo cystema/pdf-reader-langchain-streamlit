@@ -1,19 +1,21 @@
-
+#!/usr/bin/python3.9
 import streamlit as st
 from dotenv import load_dotenv
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.chat_models import ChatOpenAI
+from langchain.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
+from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.vectorstores import Chroma
-from langchain_community.document_loaders import PyPDFLoader
+from langchain.vectorstores import Chroma
+from langchain.document_loaders import PyPDFLoader
 from PyPDF2 import PdfReader, PdfWriter
 from tempfile import NamedTemporaryFile
 import base64
 from htmlTemplates import expander_css, css, bot_template, user_template
+
+
 # streamlit deploy sqlit fix
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# __import__('pysqlite3')
+# import sys
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Process Input PDF
 def process_file(doc):
