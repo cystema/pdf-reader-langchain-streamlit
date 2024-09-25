@@ -30,8 +30,8 @@ To run this app locally, follow these steps:
 - Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/cystema/pdf-reader-langchain-streamlit.git
+cd pdf-reader-langchain-streamlit.git
 ```
 
 - Create a virtual environment and activate it:
